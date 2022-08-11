@@ -1,0 +1,27 @@
+<h2>Users</h2>
+<div>
+    <ul>
+        <li><a href="/users/new">Create New User</a></li>
+    </ul>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Email</th>
+            <th>Balance</th>
+            <th>Actions</th>
+        </thead>
+        <% users.forEach(user => { %>
+            <tr>
+                <td><%= user.name %></td>
+                <td><%= user.userTypes[0] %></td>
+                <td><%= user.email %></td>
+                <td><%= user.accountBalance %></td>
+                <td>
+                    <a href="/users/<%= user.id %>/edit">Edit</a>
+                    <a href="/users/<%= user.id %>">View</a>
+                </td>
+            </tr> 
+        <% }) %>
+    </table>
+</div>

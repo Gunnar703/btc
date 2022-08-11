@@ -1,0 +1,14 @@
+<!--
+    Information page for a specific user.
+-->
+
+<h3><%= user.name %></h3>
+<ul>
+    <li>Email: <%= user.email %></li>
+    <li>Access: <%= user.userTypes.join(', ') %></li>
+    <li>Balance: <%= user.accountBalance %></li>
+</ul>
+<a href="/users/<%= user.id %>/edit">Edit</a>
+<form method="POST" action="/users/<%= user.id %>?_method=DELETE">
+        <button type="submit">Delete User</button>
+</form>

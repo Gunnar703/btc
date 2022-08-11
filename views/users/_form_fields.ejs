@@ -1,0 +1,39 @@
+<div>
+    <label>Name</label>
+    <input name="name" type="text" value="<%= user?.name == null ? '' : user.name %>" required>
+</div>
+<div>
+    <label>Email</label>
+    <input name="email" type="email" value="<%= user?.email == null ? '' : user.email %>" required>
+</div>
+<div>
+    <label>Password</label>
+    <input name="password" type="password" value="<%= user?.password == null ? '' : user.password %>" required>
+</div>
+<div>
+    <p>Select ALL Applicable User Types:</p>
+
+    <% if (user?.userTypes?.find(element => element === 'staff')) { %>
+        <input name="isStaff" type="checkbox" checked>
+    <% } else { %>
+        <input name="isStaff" type="checkbox">
+    <% } %>
+    <label>Staff</label>
+
+    <% if (user?.userTypes?.find(element => element === 'instructor')) { %>
+        <input name="isInstructor" type="checkbox" checked>
+    <% } else { %>
+        <input name="isInstructor" type="checkbox">
+    <% } %>
+    <label>Instructor</label>
+
+    <% if (user?.userTypes?.find(element => element === 'member')) { %>
+        <input name="isMember" type="checkbox" checked>
+    <% } else { %>
+        <input name="isMember" type="checkbox">
+    <% } %>
+    <label>Member</label>
+    
+    <input name="isPlayer" type="checkbox" checked>
+    <label>Player</label>
+</div>

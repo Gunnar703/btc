@@ -10,13 +10,17 @@ const userSchema = new mongoose.Schema({
     }, password: {
         type: String,
         required: true
-    }, userType: {
+    }, userTypes: {
         type: Array,
         required: true
     }, accountBalance: {
         type: Number,
         required: true
     }
+});
+
+userSchema.post('findOneAndDelete', async (userDoc) => {
+    console.log(`Deleted user record for user ${userDoc.name}`);
 });
 
 module.exports = mongoose.model( 'User' , userSchema );

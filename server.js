@@ -12,6 +12,7 @@ const methodOverride = require('method-override');
 
 // Import router modules
 const indexRouter = require('./routes/index');
+const usersRouter = require('./routes/users');
 
 // Configure view engine, viewws, and layouts
 app.set('view engine', 'ejs'); // sets view engine to ejs
@@ -32,6 +33,7 @@ db.once('open', () => console.log('Connected to Mongoose!'));
 
 // Routing
 app.use('/', indexRouter);
+app.use('/users', usersRouter);
 
 // Server launch
 app.listen(process.env.PORT || 3000);
