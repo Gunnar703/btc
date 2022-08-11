@@ -1,0 +1,27 @@
+<h2>Courts</h2>
+<a href="/courts/new">Create New Court</a>
+<div>
+    <table>
+        <thead>
+            <th>Court Name</th>
+            <th>Court Surface</th>
+            <th>Regular Rate</th>
+            <th>Prime Time Rate</th>
+            <th>Actions</th>
+        </thead>
+        <% courts.forEach(court => { %>
+            <tr>
+                <td><%= court.name %></td>
+                <td><%= court.surface %></td>
+                <td><%= court.regularRate %></td>
+                <td><%= court.primeRate %></td>
+                <td>
+                    <form method="POST" action="/courts/<%= court.id %>?_method=DELETE">
+                        <a href="/courts/<%= court.id %>/edit">Edit</a>
+                        <button type="submit">Delete</button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </table>
+</div>

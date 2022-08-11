@@ -1,0 +1,19 @@
+<div>
+    <label>Court Name</label>
+    <input type="text" name="name" value="<%= court?.name == null ? '' : court.name %>" required>
+</div>
+<div>
+    <label>Surface</label>
+    <select name="surface">
+        <option value="Hardtop">Hardtop</option>
+        <option value="Clay">Clay</option>
+    </select>
+</div>
+<div>
+    <label>Regular Rate</label>
+    <input type="number" name="regularRate" value="<%= court?.regularRate == null ? '' : court.regularRate %>" required>
+</div>
+<div>
+    <label>Prime Time Rate</label>
+    <input type="number" name="primeRate" value="<%= court?.primeRate == null ? '' : court.primeRate %>" required>
+</div>

@@ -1,0 +1,6 @@
+<form method="POST" action="/courts/<%= court.id %>?_method=PUT">
+    <%- include('_form_fields.ejs') %>
+
+    <a href="/courts">Cancel</a>
+    <button type="submit">Update Court</button>
+</form>

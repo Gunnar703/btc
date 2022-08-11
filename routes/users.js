@@ -47,7 +47,7 @@ router.post('/', async (req, res) => {
     });
     try {
         // tries to save new user, redirects to user list page
-        const newUser = await user.save();
+        await user.save();
         res.redirect('/users');
     } catch (err) {
         res.redirect('/users');
@@ -88,7 +88,6 @@ router.put('/:id', async (req, res) => {
         user.password = req.body.password;
         user.userTypes = userTypes;
         await user.save();
-        // res.redirect('/users/:id');
         res.redirect('/users');
     } catch (err) {
         console.error(err);
